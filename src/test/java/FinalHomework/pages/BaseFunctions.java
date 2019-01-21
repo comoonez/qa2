@@ -36,7 +36,12 @@ public class BaseFunctions {
         driver.findElement(locator).click();
     }
 
+    public WebElement getElement(By locator) {
+        return driver.findElement(locator);
+    }
+
     public List<WebElement> getElements(By locator) {
+        Assertions.assertFalse(driver.findElements(locator).isEmpty(), "There is no such elements!");
         return driver.findElements(locator);
     }
 
